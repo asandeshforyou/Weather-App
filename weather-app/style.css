@@ -1,0 +1,343 @@
+:root {
+	--blue: #92dce5;
+	--white: #eee5e9;
+	--txtcolor: #000000;
+	--boxcolor: #92dce5;
+	--highlight: #3a606e;
+}
+
+* {
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	overflow-x: hidden;
+}
+
+.menu {
+	pointer-events: none;
+	padding: 2rem 0rem 1rem 3rem;
+	color: var(--txtcolor);
+	z-index: 7;
+	transition: all 0.3s ease;
+}
+
+.menu i {
+	cursor: pointer;
+	pointer-events: all;
+}
+
+/* for search bar */
+.search,
+#search-addon {
+	transform: translateY(-4rem);
+}
+.search {
+	padding: 10px;
+	color: var(--txtcolor);
+	background: linear-gradient(
+		122.2deg,
+		rgba(255, 255, 255, 0.4) 13.58%,
+		rgba(255, 255, 255, 0.1) 88.4%
+	);
+	box-shadow: 0px 4px 40px -1px rgba(0, 0, 0, 0.2);
+	backdrop-filter: blur(30px);
+	border-radius: 50px;
+}
+
+.search:focus {
+	color: var(--txtcolor);
+	background: linear-gradient(
+		122.2deg,
+		rgba(255, 255, 255, 0.4) 13.58%,
+		rgba(255, 255, 255, 0.1) 88.4%
+	);
+	box-shadow: 0px 4px 40px -1px rgba(0, 0, 0, 0.2);
+	backdrop-filter: blur(30px);
+	border-radius: 50px;
+}
+
+input {
+	border: none;
+	background: none;
+}
+
+/* glass effect */
+.style {
+	padding: 25px;
+	color: var(--txtcolor);
+	background: rgba(255, 255, 255, 0.35);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	box-shadow: 0px 4px 40px -1px rgba(0, 0, 0, 0.2);
+	backdrop-filter: blur(5px);
+	border-radius: 32px;
+}
+
+.box {
+	margin: 5px;
+}
+
+#grid-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+#grid-container-daydetail {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.day_detail_box {
+	width: 14rem;
+	margin: 8px;
+}
+
+#grid-container .grid-item {
+	cursor: default;
+	background-color: var(--boxcolor);
+	margin-bottom: 0;
+	width: 9rem;
+	padding: 1rem;
+	margin: 5px;
+	border-radius: 35px;
+	display: flex;
+	height: 12rem;
+	justify-content: space-between;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+.dailyTemp {
+	font-size: 2rem !important;
+	font-weight: 200 !important;
+}
+.grid-item p {
+	margin: 0;
+	font-size: 0.9rem;
+	font-weight: 300;
+}
+
+#loading {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	background-color: var(--boxcolor);
+	z-index: 8;
+	display: grid;
+	place-items: center;
+}
+
+.popup {
+	display: grid;
+	place-items: center;
+}
+
+#grid-container-daydetail {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.day_detail_box {
+	width: 15rem;
+	margin: 8px;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.push {
+	padding: 2rem 0rem 1rem 0rem;
+	position: fixed;
+	transform: translateX(20vw);
+}
+
+.currentweatherdiv {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#hourlyWeather {
+}
+
+#hourlyWeather li {
+	list-style: none;
+	flex-wrap: wrap;
+	display: flex;
+	align-items: center;
+	border-radius: 35px;
+	justify-content: space-evenly;
+	border-radius: 12px;
+	margin-bottom: 1rem;
+	background: rgba(255, 255, 255, 0.3);
+}
+
+#hourlyWeather p {
+	padding: 0;
+}
+
+#hourlyWeather ul {
+	padding: 0;
+	margin: 0;
+	max-height: 150vh;
+	overflow-y: auto;
+}
+
+.block {
+	display: inline-flex;
+	align-items: center;
+	width: 100%;
+	justify-content: space-evenly;
+}
+
+#changeTempUnit {
+	font-size: 1.5rem;
+	color: var(--highlight);
+	background-color: transparent;
+	border: none;
+	outline: none;
+}
+#changeTempUnit p {
+	padding: 0;
+}
+
+/* styling bookmarks tab */
+.bookmarks {
+	border-right: 3px solid var(--white);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: var(--txtcolor);
+	opacity: 1;
+	width: 30vw;
+	background-color: var(--boxcolor);
+	position: fixed;
+	z-index: 6;
+	height: 100%;
+	animation: wipe 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+}
+
+#bookmarks-list {
+	padding: 0rem;
+	list-style: none;
+	width: 100%;
+	max-height: 70%;
+	overflow-y: auto;
+}
+#bookmarks-list li {
+	cursor: pointer;
+	background-color: var(--boxcolor);
+	color: var(--txtcolor);
+	border: 2px solid var(--txtcolor);
+	padding: 1rem;
+	text-align: center;
+}
+
+#bookmarks-list li:hover {
+	color: var(--boxcolor);
+	background-color: var(--txtcolor);
+}
+
+.fa-bookmark {
+	color: var(--white);
+}
+
+.bookmarked {
+	color: var(--highlight);
+}
+
+/* adding animation to tab */
+@keyframes wipe {
+	0% {
+		left: -100%;
+	}
+	100% {
+		left: 0%;
+	}
+}
+
+.fill {
+	padding-top: 1.5rem;
+}
+
+.group {
+	display: flex;
+	justify-content: center;
+}
+
+.group i {
+	padding-left: 1rem;
+	cursor: pointer;
+}
+
+@media only screen and (max-width: 424px) {
+	.search,
+	#search-addon {
+		transform: none;
+	}
+	.bookmarks {
+		background-color: red;
+		width: 70vw;
+		height: 100%;
+	}
+	.fill {
+		padding-top: 1.5rem;
+	}
+	.push {
+		position: fixed;
+		transform: translateX(43vw);
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.search,
+	#search-addon {
+		transform: none;
+	}
+	.bookmarks {
+		background-color: var(--boxcolor);
+		width: 70vw;
+		height: 100%;
+	}
+	.push {
+		position: fixed;
+		transform: translateX(50vw);
+	}
+}
+
+/* customizing scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+	width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: var(--blue);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: var(--highlight);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: var(--txtcolor);
+}

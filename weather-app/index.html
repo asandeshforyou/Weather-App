@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- google fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- bootstrap -->
+		<link rel="stylesheet" href="bootstrap/bootstrap.min.css" />
+		<link rel="stylesheet" href="style.css" />
+		<link
+			href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+			rel="stylesheet"
+		/>
+
+		<!-- fontawesome -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+			integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+
+		<title>Weather App</title>
+	</head>
+
+	<body>
+		<!-- The loading spinner is inserted inside this div -->
+		<div id="loading">
+			<div class="popup">
+				<div class="spinner-border" role="status"></div>
+				<div id="initialText">Please allow location access.</div>
+			</div>
+		</div>
+		<!-- bookmarks -->
+		<div class="hidden hide-tab bookmarks">
+			<h1>Bookmarks</h1>
+			<ul id="bookmarks-list"></ul>
+		</div>
+		<!-- header -->
+		<div class="container-fluid">
+			<div class="row justify-content-end">
+				<div class="menu">
+					<i class="fas fa-bars fa-lg"></i>
+				</div>
+				<div class="extra"></div>
+				<div class="col-md-6 col-sm-12 p-3">
+					<div class="input-group rounded">
+						<input
+							type="search"
+							class="form-control search"
+							placeholder="Search"
+							aria-label="Search"
+							aria-describedby="search-addon"
+						/>
+						<span
+							style="cursor: pointer"
+							class="input-group-text border-0"
+							id="search-addon"
+						>
+							<i class="fa fa-search"></i>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- weather-elements -->
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-3 col-md-12 p-2 d-flex flex-column">
+					<div id="currentWeather" class="style box">a</div>
+					<div id="todaySummary" class="style box"></div>
+				</div>
+				<div class="col-lg-5 col-md-12 p-2 d-flex flex-column">
+					<div id="dayDetails" class="style box">c</div>
+					<div id="dailyWeather" class="style box"></div>
+				</div>
+				<div class="col-lg-4 col-md-12 p-2 d-flex flex-column">
+					<div id="hourlyWeather" class="style box">Hourly</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="config.js"></script>
+		<script src="scripts/setBackground.js"></script>
+		<script src="scripts/helpers.js"></script>
+		<script src="scripts/fetch.js"></script>
+		<script src="scripts/bookmark.js"></script>
+		<script src="scripts/rendering.js"></script>
+		<script src="scripts/search.js"></script>
+	</body>
+</html>
